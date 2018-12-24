@@ -4,26 +4,26 @@
 
 ```js
 class Car {
-	constructor(make, model, owner, gas = 100) {
-		this.make = make;
-		this.model = model;
-		this.owner = owner;
-		this.gas = gas;
-	}
+  constructor(make, model, owner, gas = 100) {
+    this.make = make;
+    this.model = model;
+    this.owner = owner;
+    this.gas = gas;
+  }
 
-	vroom() {
-		this.gas -= 3;
-		return `The ${this.make} ${this.model} goes VROOOOOOOOOOOOOM`;
-	}
+  vroom() {
+    this.gas -= 3;
+    return `The ${this.make} ${this.model} goes VROOOOOOOOOOOOOM`;
+  }
 
-	getGas(gasAmount) {
-		if (this.gas + gasAmount > 100) {
-			this.gas = 100;
-		} else {
-			this.gas += gasAmount;
-		}
-		return `The gas tank is now at ${this.gas}`;
-	}
+  getGas(gasAmount) {
+    if (this.gas + gasAmount > 100) {
+      this.gas = 100;
+    } else {
+      this.gas += gasAmount;
+    }
+    return `The gas tank is now at ${this.gas}`;
+  }
 }
 
 let car = new Car('Honda', 'Civic', 'Emily Howell', 58);
@@ -35,46 +35,46 @@ let car = new Car('Honda', 'Civic', 'Emily Howell', 58);
 
 ```js
 class Triangle {
-	constructor(a, b, c) {
-		if (this.isValid(a, b, c)) {
-			this.a = a;
-			this.b = b;
-			this.c = c;
-		} else {
-			throw new Error('Not a valid triangle');
-		}
-	}
+  constructor(a, b, c) {
+    if (this.isValid(a, b, c)) {
+      this.a = a;
+      this.b = b;
+      this.c = c;
+    } else {
+      throw new Error('Not a valid triangle');
+    }
+  }
 
-	isValid(a = this.a, b = this.b, c = this.c) {
-		if (a + b <= c || a + c <= b || b + c <= a) {
-			return false;
-		} else {
-			return true;
-		}
-	}
+  isValid(a = this.a, b = this.b, c = this.c) {
+    if (a + b <= c || a + c <= b || b + c <= a) {
+      return false;
+    } else {
+      return true;
+    }
+  }
 
-	isRightTriangle() {
-		let a = this.a;
-		let b = this.b;
-		let c = this.c;
-		let hypotenuse = Math.max(a, b, c);
+  isRightTriangle() {
+    let a = this.a;
+    let b = this.b;
+    let c = this.c;
+    let hypotenuse = Math.max(a, b, c);
 
-		if (hypotenuse == a) {
-			return this.checkPythagorean(b, c, a);
-		}
-		if (hypotenuse == b) {
-			return this.checkPythagorean(a, c, b);
-		}
-		if (hypotenuse == c) {
-			return this.checkPythagorean(a, b, c);
-		}
+    if (hypotenuse == a) {
+      return this.checkPythagorean(b, c, a);
+    }
+    if (hypotenuse == b) {
+      return this.checkPythagorean(a, c, b);
+    }
+    if (hypotenuse == c) {
+      return this.checkPythagorean(a, b, c);
+    }
 
-		return false;
-	}
+    return false;
+  }
 
-	checkPythagorean(sideA, sideB, hypotenuse) {
-		return sideA * sideA + sideB * sideB == hypotenuse * hypotenuse;
-	}
+  checkPythagorean(sideA, sideB, hypotenuse) {
+    return sideA * sideA + sideB * sideB == hypotenuse * hypotenuse;
+  }
 }
 ```
 
